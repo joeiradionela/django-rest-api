@@ -28,7 +28,6 @@ DEBUG = True
 ALLOWED_HOSTS = [
     '127.0.0.1',
     'localhost',
-    'django-rest-api-6mxh.onrender.com',
     'django-rest-api-9bwi.onrender.com',  # Add this new domain
 ]
 
