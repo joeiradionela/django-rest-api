@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-_)+0c0yk=8(fkv+m1zwqh8%(6#fuz#gubl86hpr(3!usj!(_x#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["https://django-rest-api-6mxh.onrender.com/"]
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'django-rest-api-6mxh.onrender.com']
+
 
 
 # Application definition
@@ -39,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'blog',
+    'corsheaders',
     'rest_framework',
     'rest_framework.authtoken',
 ]
@@ -54,6 +56,8 @@ REST_FRAMEWORK = {
 
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',  
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -62,6 +66,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+CORS_ALLOW_ALL_ORIGINS = True
 
 ROOT_URLCONF = 'myproject.urls'
 
